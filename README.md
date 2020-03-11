@@ -1,25 +1,40 @@
 # Contact Keeper Fullstack App
 
-#### Server built using Express
+### 📌Live версия доступна на [sergeyklimenko.com/projects/contact-keeper](https://sergeyklimenko.com/projects/contact-keeper)
 
-#### Client built using React
+#### Учебный проект. Fullstack приложение созданное с Express на back-end и React на front-end. Из функционала доступны: регистрация, авторизация, создание, редактирование м удаление контактов для каждого пользователя.
 
-To run the project, first run the development server:
+#### Для front-end использовались: React, React-Router, Axios
+
+#### Для back-end использовались: Express, Mongoose, jsonWebtoken
+
+Для state приложения вместо Redux использовался React Context. Local Storage используется для сохранения auth token.
+
+Для запуска проекта, сначала необходимо запустить back-end сервер:
 
 ```javascript
 npm run server
 ```
 
-Then run the client (from client folder):
+!!! Back-end серверу необходимы 2 переменные для работы: mongoURI (URI к БД mongoDB по типу `mongodb+srv://<user>:<pwd>@cluster.mongodb.net/`), и jwtSecret. Эти переменные необходимо разместить в файле `config/defaults.json`:
+
+```javascript
+{
+  "mongoURI": "value",
+  "jwtSecret": "value"
+}
+```
+
+Клиент можно запустить из папки `client`:
 
 ```javascript
 npm run start
 ```
 
-OR use this command to run client from root of the project:
+Или для запуска из `root` папки:
 
 ```javascript
 npm run start --prefix client
 ```
 
-Be sure not to forget to install client dependencies.
+ВАЖНО: npm модули необходимо установить и для сервера (в `project root` папке), и для клиента (в `client` папке).
