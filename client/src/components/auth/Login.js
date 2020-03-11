@@ -28,7 +28,7 @@ const Login = ({ history }) => {
     }
 
     if (errors.length > 0) {
-      errors.forEach(error => createAlert(error, 'danger'));
+      errors.forEach(error => createAlert(error.msg, 'danger'));
     }
     // eslint-disable-next-line
   }, [errors, isAuthenticated]);

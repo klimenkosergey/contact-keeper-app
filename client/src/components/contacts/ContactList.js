@@ -13,6 +13,7 @@ const ContactList = () => {
 
   // Same as componentDidMount
   useEffect(() => {
+    console.log('123');
     loadContacts();
     // eslint-disable-next-line
   }, []);

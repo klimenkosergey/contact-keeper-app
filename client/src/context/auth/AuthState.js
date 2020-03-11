@@ -19,6 +19,7 @@ const AuthState = props => {
   // Load User
   const loadUser = async () => {
     setAuthToken(state.token);
+    console.log(`token is ${state.token}`);
     try {
       const res = await axios.get('/api/auth');
 
@@ -51,9 +52,11 @@ const AuthState = props => {
 
     try {
       const res = await axios.post('/api/auth', user, config);
+      setAuthToken(res.data.token);
+      console.log(`token is ${res.data.token}`);
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
     } catch (error) {
-      console.log(error.response);
+      console.log(error.response.data);
       dispatch({ type: 'LOGIN_FAILURE', payload: error.response.data });
     }
   };
